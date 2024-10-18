@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from '../service/productservice.service';
 import { Product } from '../product.model';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -9,42 +9,44 @@ import { CommonModule } from '@angular/common';
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
   standalone: true,
-  imports:[CommonModule,ReactiveFormsModule],
+  imports:[ReactiveFormsModule,CommonModule]
 })
-export class AdminDashboardComponent {
+export class AdminDashboardComponent implements OnInit {
   productForm: FormGroup;
+  products: Product[] = [];
 
   constructor(private fb: FormBuilder, private productService: ProductService) {
     this.productForm = this.fb.group({
+      id: [null],
       name: ['', Validators.required],
       price: ['', Validators.required],
       description: [''],
-      imageUrl: [''],
+      imageUrl: ['']
+    });
+  }
+
+  ngOnInit(): void {
+    this.loadProducts();
+  }
+
+  loadProducts() {
+    this.productService.getProducts().subscribe((products) => {
+      this.products = products;
     });
   }
 
   onSubmit() {
     if (this.productForm.valid) {
-      this.productService.addProduct(this.productForm.value).subscribe((res) => {
-        console.log('Product added successfully');
-        // You can refresh the product list or show a message
+      this.productService.addOrUpdateProduct(this.productForm.value).subscribe(() => {
+        this.loadProducts(); // Reload the products after adding/updating
+        this.productForm.reset();
       });
     }
   }
 
   deleteProduct(id: number) {
     this.productService.deleteProduct(id).subscribe(() => {
-      console.log('Product deleted successfully');
-      // Refresh the product list
+      this.loadProducts(); // Reload products after deletion
     });
   }
-
-  products: Product[] = [];
-
-ngOnInit() {
-  this.productService.getProducts().subscribe((data) => {
-    this.products = data;
-  });
-}
-
 }

@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "name": "Product 1",
+    "price": 10,
+    "description": "Description of product 1",
+    "imageUrl": "http://example.com/image1.png"
+  }
+]

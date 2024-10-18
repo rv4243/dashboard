@@ -4,25 +4,25 @@ import { Observable } from 'rxjs';
 import { Product } from '../product.model';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = 'http://your-api-url/products'; // Replace with your actual backend API
+  private apiUrl = 'http://localhost:3000/api/products';
 
   constructor(private http: HttpClient) {}
 
-  // Fetch all products
+  // Get all products
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.apiUrl);
   }
 
-  // Add a new product
-  addProduct(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.apiUrl, product);
+  // Add or update a product
+  addOrUpdateProduct(product: Product): Observable<any> {
+    return this.http.post(this.apiUrl, product);
   }
 
   // Delete a product by ID
-  deleteProduct(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  deleteProduct(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

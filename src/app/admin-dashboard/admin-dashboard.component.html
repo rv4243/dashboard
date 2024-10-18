@@ -1,4 +1,4 @@
-<h2>Add Product</h2>
+<h2>Add or Update Product</h2>
 <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
   <label for="name">Name</label>
   <input id="name" formControlName="name" type="text" />
@@ -12,12 +12,13 @@
   <label for="imageUrl">Image URL</label>
   <input id="imageUrl" formControlName="imageUrl" type="text" />
 
-  <button type="submit">Add Product</button>
+  <button type="submit">Submit</button>
 </form>
 
 <h2>Product List</h2>
 <ul>
   <li *ngFor="let product of products">
     {{ product.name }} - {{ product.price }}
-   </li>
+    <!-- <button (click)="deleteProduct(product.id)">Delete</button> -->
+  </li>
 </ul>
