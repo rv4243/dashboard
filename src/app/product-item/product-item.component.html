@@ -1,0 +1,27 @@
+<div class="product-card">
+  <div class="product-image">
+    <!-- <span class="sale-badge">Sale!</span> -->
+    <img [src]="item.imageUrl" alt="Product Image" />
+  </div>
+  <div class="product-info">
+    <h2 class="product-title">{{ item.title }}</h2>
+    <div class="price">
+      <span class="original-price">$450.00</span>
+      <span class="discounted-price">$390.00</span>
+    </div>
+    <p class="description">
+      {{ item.description }}
+    </p>
+    <p class="description">
+      Quisque ut augue eu dui semper eleifend. Aliquam imperdiet nisl libero,
+      vitae vulputate lectus fringilla eget.
+    </p>
+    <div class="quantity">
+      <button (click)="decreaseQuantity()">-</button>
+      <input type="number" [(ngModel)]="quantity" min="1" />
+      <button (click)="increaseQuantity()">+</button>
+    </div>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+</div>
+<!-- //<app-products></app-products> -->

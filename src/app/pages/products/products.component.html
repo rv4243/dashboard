@@ -1,0 +1,57 @@
+<mat-sidenav-container class="sidenav-container">
+
+
+
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <div class="sidebar">
+
+        <button mat-button (click)="doFilter('men')" id="jwell">Jewellery</button>
+        <button mat-button (click)="doFilter('women')" id="nighty">Nighty</button>
+        <button mat-button (click)="doFilter('men')" id="saree">Saree</button>
+        <button mat-button (click)="doFilter('women')" id="sudi">Sudi</button>
+        <button mat-button (click)="doFilter('no')" id="clear">Clear</button>
+
+        <!-- <div id="mySidenav" class="sidenav">
+          <a href="#" id="about">About</a>
+          <a href="#" id="blog">Blog</a>
+          <a href="#" id="projects">Projects</a>
+          <button (click)="doFilter('women')"id="contact" >Contact</button>
+        </div> -->
+
+
+      </div>
+      <!-- <a mat-list-item (click)="doFilter('men')">Home</a>
+      <a mat-list-item href="/about">About</a>
+      <a mat-list-item href="/product">Product</a>
+      <a mat-list-item href="/contact">Contact</a>
+      <button mat-button (click)="doFilter('men')">Mens</button>
+<button mat-button (click)="doFilter('women')">Women</button> -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <!-- <button mat-button (click)="doFilter('men')">Mens</button>
+<button mat-button (click)="doFilter('women')">Women</button> -->
+  <mat-sidenav-content>
+    <div class="container responsive-grid">
+      <mat-card *ngFor="let item of filteredList" routerLink="home">
+        <img mat-card-image [src]="item.imageUrl" (click)="router.navigateByUrl('/product/' + item?.id)" />
+        <mat-card-header>
+          <mat-card-title>{{ item.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ item.description }}</p>
+        </mat-card-content>
+        <div class="product-price">₹1999.00</div>
+        <mat-card-actions>
+          <div class="product-rating">
+            ⭐⭐⭐⭐⭐ <span>(160 reviews)</span>
+          </div>
+          <button mat-button routerLink="home">LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </mat-sidenav-content>
+
+
+</mat-sidenav-container>

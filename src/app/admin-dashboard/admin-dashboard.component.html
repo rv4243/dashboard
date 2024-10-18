@@ -1,0 +1,23 @@
+<h2>Add Product</h2>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <label for="name">Name</label>
+  <input id="name" formControlName="name" type="text" />
+
+  <label for="price">Price</label>
+  <input id="price" formControlName="price" type="number" />
+
+  <label for="description">Description</label>
+  <input id="description" formControlName="description" type="text" />
+
+  <label for="imageUrl">Image URL</label>
+  <input id="imageUrl" formControlName="imageUrl" type="text" />
+
+  <button type="submit">Add Product</button>
+</form>
+
+<h2>Product List</h2>
+<ul>
+  <li *ngFor="let product of products">
+    {{ product.name }} - {{ product.price }}
+   </li>
+</ul>

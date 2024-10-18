@@ -1,0 +1,151 @@
+.container {
+  padding: 24px;
+}
+
+img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+.footer{
+  max-width: auto;
+  height: 150px;
+  background-color: gray;
+  opacity: 2;
+
+}
+.line{
+  font-size: 35px;
+  margin-left: 35%;
+  margin-top: 0px;
+}
+
+.product-price{
+  margin-left: 35%;
+  margin-top: 10px;
+
+
+}
+.sidenav-container {
+  height: 100%;
+
+}
+
+mat-sidenav {
+  width: 200px;
+
+}
+
+mat-nav-list{
+  align-items: center;
+  font-size: large;
+  font-family:'Times New Roman', Times, serif
+
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  padding-left: 50px;
+
+}
+
+/* Sidebar links */
+
+
+/* Active/current link */
+.sidebar button.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+.sidebar button {
+  position: absolute; /* Position them relative to the browser window */
+  left: -50px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 15px;
+  padding-left: 50px; /* 15px padding */
+  width: 200px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Increase font size */
+  color: black; /* White text color */
+  border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+}
+
+.sidebar button:hover {
+  left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#jwell {
+  top: 20px;
+  background-color: #04AA6D;
+}
+
+#nighty {
+  top: 80px;
+  background-color: #2196F3; /* Blue */
+}
+
+#saree {
+  top: 140px;
+  background-color: #f44336; /* Red */
+}
+
+#sudi {
+  top: 200px;
+  background-color: #dfd111 /* Light Black */
+}
+
+#clear {
+  top: 260px;
+  background-color: #dfd111 /* Light Black */
+}

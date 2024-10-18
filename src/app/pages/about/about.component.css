@@ -1,0 +1,95 @@
+.about-us-section {
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.text-primary {
+  color: #007bff;
+}
+
+.text-secondary {
+  color: #6c757d;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+h1, h2 {
+  font-weight: 700;
+}
+
+.img-fluid {
+  max-height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+@media (max-width: 768px) {
+  .img-fluid {
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+.team-section img {
+  width: 150px;
+  height: 150px;
+}
+
+.team-section h4 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.text-primary {
+  color: #007bff !important;
+}
+
+.team-section .text-muted {
+  color: #6c757d !important;
+}
+
+.btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #007bff;
+}
+
+img {
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 60vh;
+  }
+
+  .team-section img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+
+
+

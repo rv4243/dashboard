@@ -1,0 +1,48 @@
+.profile-page {
+  font-family: 'Arial', sans-serif;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.card-body {
+  padding: 3rem;
+}
+
+img {
+  border: 3px solid #007bff;
+}
+
+button {
+  margin-top: 1rem;
+}
+
+h5 {
+  margin-top: 2rem;
+  color: #333;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.form-control {
+  background-color: #f8f9fa;
+}
+
+.btn-outline-primary {
+  padding: 0.5rem 1rem;
+}
+
+.text-muted {
+  font-size: 0.85rem;
+}
+
+.text-decoration-none {
+  color: #007bff;
+}
+
+.text-decoration-none:hover {
+  text-decoration: underline;
+}

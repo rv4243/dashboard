@@ -1,0 +1,59 @@
+<div class="container profile-page my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm rounded-lg">
+        <div class="card-body p-5">
+          <!-- Profile Header -->
+          <div class="d-flex align-items-center mb-4">
+            <img src="assets/img0.jpg" alt="Profile Picture" class="rounded-circle img-fluid shadow-sm" style="width: 100px; height: 100px;">
+            <div class="ms-4">
+              <h2 class="h4 mb-1">My Profile</h2>
+              <button class="btn btn-outline-primary btn-sm">Connect to LinkedIn</button>
+              <a href="#" class="d-block text-muted small mt-2"><i class="fas fa-pen"></i> Edit</a>
+            </div>
+          </div>
+
+          <!-- Profile Form -->
+          <form>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" id="firstName" class="form-control" [(ngModel)]="customer.firstName">
+              </div>
+              <div class="col-md-6">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" id="lastName" class="form-control" [(ngModel)]="customer.lastName">
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="timezone" class="form-label">Time Zone</label>
+                <select id="timezone" class="form-select" [(ngModel)]="customer.timeZone">
+                  <option selected>+5 GMT</option>
+                  <!-- Add other timezone options as needed -->
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" id="phone" class="form-control" [(ngModel)]="customer.phone">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" class="form-control" [(ngModel)]="customer.email" readonly>
+            </div>
+          </form>
+
+          <!-- Authentication Section -->
+          <div class="mt-5">
+            <h5 class="mb-3">Authentication</h5>
+            <p><strong>SAML ID:</strong> {{ customer.email }}</p>
+            <p><strong>SAML Details:</strong> <a href="{{ customer.samlUrl }}" class="text-decoration-none">{{ customer.samlUrl }}</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
